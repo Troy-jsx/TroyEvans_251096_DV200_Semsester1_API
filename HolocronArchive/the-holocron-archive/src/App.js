@@ -1,19 +1,16 @@
 import './App.css';
-import {BrowserRouter, Link, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import Compare from './pages/Compare';
 import Timeline from "./pages/Timeline";
+import NavBar from "./components/navBar";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         
-        <nav>
-          <Link to="/">Home</Link> |
-          <Link to="/compare">Compare</Link> |
-          <Link to="/timeline">Timeline</Link>
-        </nav>
+        <NavBar/> {/* The routes and links work even if not in the same file */}
         
         <Routes>
           <Route path="/" element={<Home/>}/>
