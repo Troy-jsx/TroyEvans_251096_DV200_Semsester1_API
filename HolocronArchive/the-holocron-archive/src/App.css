@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab&display=swap');
 
-.App {
-  color: white;
-}
 
 h1 {
   margin: 0;
@@ -11,6 +10,10 @@ h1 {
 .Home {
   width: 100vw;
   height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   
   background-color: black;
@@ -22,8 +25,88 @@ h1 {
   background-repeat: no-repeat;
 
   text-align: center;
-  color: white;
   font-family: 'Julius Sans One', sans-serif;
+
+  overflow: hidden;
+}
+
+.HeroSection{
+  width: 90%;
+  height:100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+
+  transform: translateY(8vh);
+}
+
+.HeroPlanet{
+  width: 85%;
+  height: 85%;
+
+  background: url("../public//images//tython.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  pointer-events: none;
+
+  transform: translate(-10vw, 10vh);
+}
+
+.HeroText{
+  height: 80%;
+  pointer-events: none;
+  transform: translate(-8vw);
+}
+
+.HeroTitle {
+  display: flex;
+  
+  flex-direction: column;
+  justify-content: center;
+
+  color: #E7E7E7;
+  text-align: center;
+  text-shadow: 0 0 33.5px rgba(231, 251, 255, 0.77);
+  font-family: "Star Jedi";
+  font-size: 9vh;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  padding-top: 5vh;
+  padding-bottom: 7vh;
+}
+
+.HeroBody {
+  display: flex;
+  width: 657px;
+  height: 15vh;
+  flex-direction: column;
+  justify-content: center;
+
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0 0 33.5px #E7FBFF;
+  font-family: "Hepta Slab";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: .2vw;
+
+  padding-bottom: 2vh;
+}
+
+.ApiSize{
+  color: #FBFF00;
+  padding-bottom: 3vh;
+  font-size: 1.5vw;
+
 }
 
 .navBar {
@@ -36,7 +119,22 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 8vw;
-  
+}
+
+nav a:link,
+nav a:visited {
+  color: #A0A0A0;
+  text-align: center;
+  font-family: "Julius Sans One";
+  font-size: clamp(18px, 2.1vw, 40px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.8vw;
+  text-decoration: none;
+}
+
+nav a.active-link {
   color: #FFF;
   text-align: center;
   text-shadow: 0 0 33.5px #E7FBFF;
@@ -45,15 +143,40 @@ h1 {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 1vw;
+  letter-spacing: 1.2vw;
+  text-decoration: none;
 }
 
-nav a:link,    
-nav a:visited, 
-nav a:hover,   
-nav a:active {
-  color: #ffffff;      
-  text-decoration: none; 
+.YellowTextBtn{
+  color: #f0ff20;
+  text-align: center;
+  text-shadow: 0 0 33.5px #E7FBFF;
+  font-family: "Julius Sans One";
+  font-size: clamp(18px, 4vw, 40px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.05vw;
+  text-decoration: none;
+
+  pointer-events:all;
+}
+
+.YellowTextBtn:hover{
+  color: #eef85a;
+  letter-spacing: 1.1vw;
+}
+nav a:hover {
+  color: #f0ff20;
+  text-align: center;
+  text-shadow: 0 0 33.5px #E7FBFF;
+  font-family: "Julius Sans One";
+  font-size: clamp(18px, 4vw, 40px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.05vw;
+  text-decoration: none;
 }
 
 .NavbarLogo {
