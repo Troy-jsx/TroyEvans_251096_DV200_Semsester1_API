@@ -14,11 +14,6 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  
-  background-color: black;
-
-  background-image: url('../public/images/Background.png');
   
   background-size: cover;
   background-position: center;

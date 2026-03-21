@@ -23,10 +23,11 @@ function App() {
             mouseRepulsion
             repulsionStrength={0.1}
             twinkleIntensity={0.15}
-            rotationSpeed={0.1}
+            rotationSpeed={0.05}
             transparent={false}
           />
       </div>
+      
         <NavBar/> {/* The routes and links work even if not in the same file */}
         
         <Routes>

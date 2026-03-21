@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "../App.css";
+import axios from 'axios';
 
 function TotalSWAPIEntries(){
     const [totalEntries, setTotalEntries] = useState(null);
@@ -8,20 +9,25 @@ function TotalSWAPIEntries(){
     useEffect(() => {
         const endpoints = ["people", "planets", "starships", "vehicles", "species", "films"]; //all the endpoints i want to count (this is all of them)
 
-        Promise.all(    //just makes sure it all gets done at once
-            endpoints.map(endpoint => //do for each endpoint
-            fetch(`https://swapi.dev/api/${endpoint}/`) 
-                .then(res => res.json()) //res = response, its getting the requested data in json format and makes it a js object too
-                .then(data => data.count) //once done then only return the count property
-            )
-        )
-        .then(counts => { //once we have the counts we do this bit
-            const total = counts.reduce((sum, count) => sum + count, 0);
-            setTotalEntries(total);
-            setLoading(false);
-        })
-        .catch(err => console.error(err));
+        async function getTotalEntries() {
+            try{
+                const results = await Promise.all( //gets everything before moving on
+                    endpoints.map(endpoint => //we make a new array using the endpoints
+                        axios.get(`https://swapi.dev/api/${endpoint}/`) //get the actual endpoints using axios
+                            .then(response => response.data.count) //dont need to .json at all because axios does that for me
+                    )
+                );
 
+                const total = results.reduce((sum, count) => sum + count, 0); //get our sum
+                setTotalEntries(total);
+                setLoading(false);
+            }
+            catch(error){
+                console.error(error);
+            }
+        }
+
+        getTotalEntries();
     }, []);
 
     if(loading) return<p className="ApiSize">gimmie a sec...</p>
