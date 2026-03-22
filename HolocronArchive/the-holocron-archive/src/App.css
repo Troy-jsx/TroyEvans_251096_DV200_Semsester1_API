@@ -35,7 +35,7 @@ h1 {
   align-items: center;
   pointer-events: none;
 
-  transform: translateY(8vh);
+  transform: translateY(-9vh);
 }
 
 .HeroPlanet{
@@ -79,7 +79,7 @@ h1 {
 
 .HeroBody {
   display: flex;
-  width: 657px;
+  width: 50vw;
   height: 15vh;
   flex-direction: column;
   justify-content: center;
@@ -105,7 +105,7 @@ h1 {
 }
 
 .navBar {
-  margin-top: 1.5%;
+  padding-top: 1.5%;
   width: 90vw;
   margin-left: 3%;
   margin-right: 3%;
@@ -114,6 +114,13 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 8vw;
+  pointer-events: all;
+
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.723),  rgb(0, 0, 0));
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 nav a:link,
@@ -182,4 +189,103 @@ nav a:hover {
   background: url('../public/images/Logo.png');
   background-position: center;
   background-size: cover;
+}
+
+.Footer{
+  pointer-events: all;
+  height: 45vh;
+  width: 100vw;
+  background-color: rgba(27, 0, 64, 0.218);
+  color: #f0ff20;
+  text-align: center;
+  padding: 0;
+  margin-top: 5vh;
+
+  
+  display: flex;
+  align-items: center;
+  justify-content: top;
+  flex-direction: column;
+}
+
+.Footer p{
+  font-size: clamp(18px, 0.7vw, 40px);
+}
+
+.FooterRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: top;
+  padding-bottom: 1%;
+}
+
+.FooterNav{
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: 90%;
+
+  margin: 2%;
+  
+}
+
+.Footer a:link,
+.Footer a:visited {
+  color: #A0A0A0;
+  text-align: center;
+  font-family: "Julius Sans One";
+  font-size: clamp(18px, 0.7vw, 40px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.2vw;
+  text-decoration: none;
+  padding: 1vh;
+}
+
+.Footer a:hover {
+  color: #f0ff20;
+  text-align: center;
+  text-shadow: 0 0 33.5px #E7FBFF;
+  font-family: "Julius Sans One";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+
+#tagline{
+  font-size: clamp(18px, 0.25vw, 40px);
+  color: #E7FBff;
+  margin: 0;
+}
+#LogoTagline{
+  font-size: clamp(18px, 0.25vw, 40px);
+  color: #E7FBff;
+  margin-top: 5vh;
+}
+
+.FooterTagline{
+  padding-right: 10vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.FooterLogo {
+  width: 6vw;
+  height: 6vw; 
+
+  margin-top: 3vh;
+
+  background: url('../public/images/Logo.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.FooterBottom{
+  padding-bottom: 0;
+
 }
