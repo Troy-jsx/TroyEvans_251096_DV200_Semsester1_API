@@ -9,7 +9,7 @@ function Home() {
                 <div className="HeroSection">
                     <div className="HeroPlanet"></div>
                     <div className="HeroText">
-                        <div className="HeroTitle">Star Wars Data,<br/>Visualised</div>
+                        <div className="HeroTitle">Star Wars Data,<br/>visualised</div>
                         <div className="HeroBody">Compare characters, planets, starships and more, using real Star Wars data.</div>
                         <TotalSWAPIEntries/>
                         <NavLink to="/compare" className="YellowTextBtn">Compare</NavLink>
