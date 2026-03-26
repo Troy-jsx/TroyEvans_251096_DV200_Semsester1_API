@@ -1,6 +1,6 @@
 import "../App.css";
 import { NavLink } from "react-router-dom";
-import TotalSWAPIEntries from "../services/SWAPI";
+import TotalSWAPIEntries from "../components/TotalSWAPIEntries";
 
 function Home() {
     return(
