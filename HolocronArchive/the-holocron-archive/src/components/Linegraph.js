@@ -22,7 +22,7 @@ function Linegraph()
         }, '');
     };
 
-    const labels = films.map(film => film.episode_id);
+    const labels = films.map(film => toRoman(film.episode_id));
 
     const data = {
     labels: labels,
@@ -44,7 +44,8 @@ function Linegraph()
         responsive: true,
         plugins: { //plugins.
             legend: { //plugins.legend
-                position: "top", 
+                position: "top",
+
                 labels: { //plugins.legend.labels
                     color: '#d8d8d8',
                     boxWidth: 0,
@@ -60,33 +61,34 @@ function Linegraph()
                 backgroundColor: '#1a1a2e',
                 displayColors: false,
 
-                titleColor: '#f5ff3d', 
+                titleColor: '#f5ff3d',
                 titleFont: {
-                family: "'Julius Sans One', sans-serif",
-                size: 14,
-                weight: 'bold',
+                    family: "'Julius Sans One', sans-serif",
+                    size: 14,
+                    weight: 'bold',
                 },
 
                 bodyColor: '#d8d8d8',
                 bodyFont: {
-                family: "'Hepta Slab', serif",
-                size: 13,
+                    family: "'Hepta Slab', serif",
+                    size: 13,
                 },
 
                 callbacks: {
                     title: (items) => {
-                            const film = films[items[0].dataIndex];
-                            return film ? `Episode ${toRoman(film.episode_id)}: ` + film.title : ''; // if data hasnt loaded yet
-                        },
+                        const film = films[items[0].dataIndex];
+                        return film ? `Episode ${toRoman(film.episode_id)}: ` + film.title : ''; // if data hasnt loaded yet
+                    },
 
                     label: (item) => {
-                            const film = films[item.dataIndex];
-                            return [
-                                `Characters: ${item.formattedValue}`,
-                                `Director: ${film.director}`,      
-                                `Released: ${film.release_date}`,       
-                            ];
+                        const film = films[item.dataIndex];
+                        return [
+                            `Characters: ${item.formattedValue}`,
+                            `Director: ${film.director}`,
+                            `Released: ${film.release_date}`,
+                        ];
                     },
+                },
             },
         },
 
@@ -99,7 +101,6 @@ function Linegraph()
                         family: "'Star Jedi', serif",
                         size: 35,
                     },
-
                 },
                 ticks:{
                     font:{
@@ -108,7 +109,6 @@ function Linegraph()
                     },
                     color: '#dfdfdf',
                 },
-                
             },
 
             y: {
@@ -127,7 +127,6 @@ function Linegraph()
                         size: 20,
                     },
                     color: '#dfdfdf',
-                    },
                 },
             },
         }

@@ -1,6 +1,7 @@
 import "../App.css";
 import { NavLink } from "react-router-dom";
 import TotalSWAPIEntries from "../components/TotalSWAPIEntries";
+import Dashboard from "../components/Dashboard";
 
 function Home() {
     return(
@@ -16,6 +17,7 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <Dashboard/>
         </div>
     );
 }

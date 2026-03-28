@@ -1,15 +1,25 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://swapi.dev/api';
+const BASE_URL = 'https://swapi.info/api';
 const endpoints = ["people", "planets", "starships", "vehicles", "species", "films"];
 
-export const getTotalEntries = async () => { //exporting and declaring in one line
-    const results = await Promise.all( //we will wait for all to finish before moving on
-        endpoints.map(endpoint =>
-            axios.get(`${BASE_URL}/${endpoint}/`).then(r => r.data.count)
-        )
-    ); //we now have an array of numbers not promises
-    return results.reduce((sum, count) => sum + count, 0);
+export const getEndpointCounts = async () => {
+    const results = await Promise.all(
+        endpoints.map(e => axios.get(`${BASE_URL}/${e}/`).then(r => r.data.length))
+    );
+    return endpoints.map((e, i) => ({ name: e, count: results[i] }));
 };
 
-export const getFilms = () => axios.get(`${BASE_URL}/films/`).then(r => r.data.results); //getting the films endpoint in json in one line with axios
+export const getTotalEntries = async () => {
+    const counts = await getEndpointCounts();
+    return counts.reduce((sum, c) => sum + c.count, 0);
+};
+
+export const getFilms = () => axios.get(`${BASE_URL}/films/`).then(r => r.data);
+
+export const getPerson = (id) => axios.get(`${BASE_URL}/people/${id}/`).then(r => r.data);
+export const getPlanet = (id) => axios.get(`${BASE_URL}/planets/${id}/`).then(r => r.data);
+export const getStarship = (id) => axios.get(`${BASE_URL}/starships/${id}/`).then(r => r.data);
+export const getVehicle = (id) => axios.get(`${BASE_URL}/vehicles/${id}/`).then(r => r.data);
+export const getSpecies = (id) => axios.get(`${BASE_URL}/species/${id}/`).then(r => r.data);
+export const getFilm = (id) => axios.get(`${BASE_URL}/films/${id}/`).then(r => r.data);

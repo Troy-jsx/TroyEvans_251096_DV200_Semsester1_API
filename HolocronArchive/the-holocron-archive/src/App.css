@@ -312,3 +312,117 @@ nav a:hover {
   height: 70vh;
   width: 90vw;
 }
+
+.Dashboard {
+  width: 90vw;
+  margin: 0 auto;
+  padding-bottom: 10vh;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.DashboardTitle {
+  color: #E7E7E7;
+  font-family: 'Star Jedi', serif;
+  font-size: clamp(18px, 3vw, 48px);
+  text-align: center;
+  text-shadow: 0 0 33.5px rgba(231, 251, 255, 0.77);
+  padding-bottom: 1vh;
+  padding-top: 2vh;
+  letter-spacing: 0.5vw;
+}
+
+.StatGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5vw;
+  margin-bottom: 10vh;
+}
+
+.StatCard {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 2vh 1.5vw;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.StatLabel {
+  color: #A0A0A0;
+  font-size: clamp(12px, 1vw, 20px);
+  letter-spacing: 0.3vw;
+  margin: 0 0 1vh;
+}
+
+.StatValue {
+  color: #f0ff20;
+  font-size: clamp(24px, 3vw, 56px);
+  text-shadow: 0 0 33.5px #E7FBFF;
+  margin: 0;
+}
+
+.BarChart {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 5vh;
+}
+
+.BarRow {
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+}
+
+.BarLabel {
+  color: #A0A0A0;
+  font-size: clamp(12px, 1vw, 20px);
+  letter-spacing: 0.2vw;
+  width: 10vw;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.BarTrack {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  height: 3vh;
+  overflow: hidden;
+}
+
+.BarFill {
+  height: 100%;
+  background-color: #f0ff20;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  font-size: clamp(10px, 0.8vw, 16px);
+  color: #1a1a1a;
+  transition: width 1s ease;
+}
+
+.TooltipContainer {
+    position: relative;
+    pointer-events: all;
+    margin-top: 10%;
+}
+
+.TooltipContent {
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #E7E7E7;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: clamp(10px, 0.8vw, 14px);
+    letter-spacing: 0.1vw;
+    padding: 8px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10;
+}
